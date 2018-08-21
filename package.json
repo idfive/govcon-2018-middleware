@@ -1,0 +1,31 @@
+{
+  "name": "graphql_starships",
+  "version": "1.0.0",
+  "description": "A graphql-express middleware server for GovCon 2018",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "idfive",
+  "license": "MIT",
+  "engines": {
+    "node": "9.5.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.1",
+    "graphql-tools": "^2.24.0",
+    "lodash": "^4.17.5",
+    "moment-timezone": "^0.5.21",
+    "node-moment": "^2.5.1",
+    "oauth-1.0a": "^2.2.4",
+    "passport": "^0.2.2",
+    "passport-http": "^0.3.0",
+    "truncate-html": "^1.0.0-rc.6"
+  }
+}
