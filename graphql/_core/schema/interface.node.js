@@ -1,7 +1,6 @@
 const node = `
   interface Node {
-    id: String
-    nid: ID
+    id: ID
   }
 `;
 

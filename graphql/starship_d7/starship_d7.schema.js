@@ -1,5 +1,5 @@
-const Starship = `
-  type Starship implements Node {
+const Starship_D7 = `
+  type Starship_D7 implements Node {
     id: ID
     title: String
     body: String
@@ -7,4 +7,4 @@ const Starship = `
   }
 `;
 
-module.exports = Starship;
+module.exports = Starship_D7;

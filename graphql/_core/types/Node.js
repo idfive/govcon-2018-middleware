@@ -10,8 +10,7 @@ const truncate = require('truncate-html');
    */
   constructor(data, included) {
     let attributes = data.attributes;
-    this.id = attributes.uuid;
-    this.nid = attributes.nid;
+    this.id = attributes.id || attributes.nid;
 
     // title and body not required on nodes, but included here since they appear in most cases
     this.title = attributes.title;

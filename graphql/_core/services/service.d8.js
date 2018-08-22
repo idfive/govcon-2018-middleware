@@ -1,6 +1,5 @@
 var _ = require('lodash');
 var axios = require('axios');
-const moment = require('node-moment');
 
 class Service {
 
@@ -14,6 +13,7 @@ class Service {
    */
   get(args) {
     var queryStr = this.buildQuery(args);
+    console.log(queryStr);
     return axios.get(this.baseUrl + this.endpoint + queryStr);
   }
 
@@ -51,33 +51,6 @@ class Service {
       if (args.sort && args.sort.field && this.sort[args.sort.field]) {
         let direction = (args.sort.direction.toUpperCase() == 'DESC') ? '-' : '';
         queryParts.push('sort=' + direction + this.sort[args.sort.field]);
-      }
-
-      // Filters
-      if (!_.isEmpty(args.filter)) {
-
-        var filters = [];
-        for (var key in args.filter) {
-          if(args.filter[key] == true) {
-            args.filter[key] = 1;
-          }
-          if(args.filter[key] == false) {
-            args.filter[key] = 0;
-          }
-          var _this = this;
-
-          for (var subkey in args.filter[key]) {
-            var filter = 'filter[' + _this.filters[key] + '_filter][value][]=' + args.filter[key][subkey];
-            filters.push(filter);
-          }
-          var filter_path = 'filter[' + _this.filters[key] + '_filter][path]=' + _this.filters[key];
-          filters.push(filter_path);
-          var filter_operator = 'filter[' + _this.filters[key] + '_filter][operator]=IN';
-          filters.push(filter_operator);
-
-        }
-        var filterString = filters.join('&');
-        queryParts.push(filterString);
       }
     }
 

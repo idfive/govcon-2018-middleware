@@ -7,7 +7,6 @@ const directionEnum = require('./enum.direction');
 // Inputs
 const pageInput = require('../../_core/schema/input.page');
 const sortInput = require('../../_core/schema/input.sort');
-const starshipFilter = require('./input.starship-filter');
 
 // Interfaces
 const nodeInterface = require('../../_core/schema/interface.node');
@@ -20,11 +19,15 @@ const taxonomyTermSchema = require('../../taxonomy_term/taxonomy_term.schema');
 const taxonomyTermWrapperSchema = require('../../taxonomy_term/taxonomy_term_wrapper.schema');
 const starshipSchema = require('../../starship/starship.schema');
 const starshipWrapperSchema = require('../../starship/starship_wrapper.schema');
+const starshipD7Schema = require('../../starship_d7/starship_d7.schema');
+const starshipD7WrapperSchema = require('../../starship_d7/starship_d7_wrapper.schema');
 
 const RootQuery = `
   type RootQuery {
     starship(id: String!): StarshipWrapper,
-    starships(filter: starshipFilter, page: page, sort: sort): StarshipWrapper,
+    starships(page: page, sort: sort): StarshipWrapper,
+    starship_d7(id: String!): StarshipD7Wrapper,
+    starships_d7(page: page, sort: sort): StarshipD7Wrapper,
   }
 `;
 
@@ -45,7 +48,8 @@ module.exports = makeExecutableSchema({
     sortInput,
     starshipSchema,
     starshipWrapperSchema,
-    starshipFilter,
+    starshipD7Schema,
+    starshipD7WrapperSchema,
     pageInput,
     paginationType
   ],
