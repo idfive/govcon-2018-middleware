@@ -21,6 +21,8 @@ const starshipSchema = require('../../starship/starship.schema');
 const starshipWrapperSchema = require('../../starship/starship_wrapper.schema');
 const starshipD7Schema = require('../../starship_d7/starship_d7.schema');
 const starshipD7WrapperSchema = require('../../starship_d7/starship_d7_wrapper.schema');
+const starwarsSchema = require('../../star_wars/star_wars.schema');
+const starwarsWrapperSchema = require('../../star_wars/star_wars_wrapper.schema');
 
 const RootQuery = `
   type RootQuery {
@@ -28,6 +30,8 @@ const RootQuery = `
     starships(page: page, sort: sort): StarshipWrapper,
     starship_d7(id: String!): StarshipD7Wrapper,
     starships_d7(page: page, sort: sort): StarshipD7Wrapper,
+    starwars_starship(id: String!): StarWarsWrapper,
+    starwars_starships(page: page, sort: sort): StarWarsWrapper,
   }
 `;
 
@@ -50,6 +54,8 @@ module.exports = makeExecutableSchema({
     starshipWrapperSchema,
     starshipD7Schema,
     starshipD7WrapperSchema,
+    starwarsSchema,
+    starwarsWrapperSchema,
     pageInput,
     paginationType
   ],
