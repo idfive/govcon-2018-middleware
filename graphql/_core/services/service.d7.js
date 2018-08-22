@@ -13,7 +13,6 @@ class Service {
    */
   get(args) {
     var queryStr = this.buildQuery(args);
-    console.log(queryStr);
     return axios.get(this.baseUrl + this.endpoint + queryStr);
   }
 
