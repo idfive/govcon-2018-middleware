@@ -17,16 +17,6 @@ class Service {
   }
 
   /**
-   * Specific for taxonomy terms, as we need to modify endpoint per vocabulary filter, and ignore vocabularyfilter in the filter build.
-   */
-  getTaxonomy(args) {
-    var vid = args.filter.vocabulary;
-    delete args.filter;
-    var queryStr = this.buildQuery(args);
-    return axios.get(this.baseUrl + this.endpoint + vid + queryStr);
-  }
-
-  /**
    * Builds a query from arguments and relationships
    * @param {*} args
    */
