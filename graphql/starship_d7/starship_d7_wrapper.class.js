@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const Starship_D7 = require('./starship_D7.class');
+const Starship_D7 = require('../starship_d7/starship_d7.class');
 const Pagination = require('../_core/class/pagination.class');
 
 class StarshipD7Wrapper {
