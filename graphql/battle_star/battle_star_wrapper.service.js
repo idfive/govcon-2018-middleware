@@ -1,16 +1,16 @@
-const Service = require('../_core/services/service.d7');
+const Service = require('../_core/services/service.d8');
 
-class StarshipD7WrapperService extends Service {
+class BattleStarWrapperService extends Service {
 
   constructor() {
     super();
 
-    this.endpoint = '/starships';
+    this.endpoint = '/node/starship';
 
     // Map relationships
     this.relationships = {
       'field_starship_class': {
-        'reference': 'field_starship_class',
+        'reference': 'taxonomy_term--starship_class',
         'fields': [
           'tid',
           'name'
@@ -30,4 +30,4 @@ class StarshipD7WrapperService extends Service {
 
 }
 
-module.exports = StarshipD7WrapperService;
+module.exports = BattleStarWrapperService;

@@ -1,7 +1,7 @@
 {
   "name": "graphql_starships",
   "version": "1.0.0",
-  "description": "A graphql-express middleware server for GovCon 2018",
+  "description": "A graphql-express middleware server for drupal GovCon 2018",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "cors": "^2.8.4",
     "crypto": "^1.0.1",
     "express": "^4.16.2",
     "express-graphql": "^0.6.12",

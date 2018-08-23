@@ -17,21 +17,17 @@ const paginationType = require('../../_core/schema/type.pagination');
 // Schemas
 const taxonomyTermSchema = require('../../taxonomy_term/taxonomy_term.schema');
 const taxonomyTermWrapperSchema = require('../../taxonomy_term/taxonomy_term_wrapper.schema');
-const starshipSchema = require('../../starship/starship.schema');
-const starshipWrapperSchema = require('../../starship/starship_wrapper.schema');
-const starshipD7Schema = require('../../starship_d7/starship_d7.schema');
-const starshipD7WrapperSchema = require('../../starship_d7/starship_d7_wrapper.schema');
-const starwarsSchema = require('../../star_wars/star_wars.schema');
-const starwarsWrapperSchema = require('../../star_wars/star_wars_wrapper.schema');
+const starshipSchema = require('./starship.schema');
+const battleStarWrapperSchema = require('../../battle_star/battle_star_wrapper.schema');
+const starTrekWrapperSchema = require('../../star_trek/star_trek_wrapper.schema');
+const starWarsSchema = require('../../star_wars/star_wars.schema');
+const starWarsWrapperSchema = require('../../star_wars/star_wars_wrapper.schema');
 
 const RootQuery = `
   type RootQuery {
-    starship(id: String!): StarshipWrapper,
-    starships(page: page, sort: sort): StarshipWrapper,
-    starship_d7(id: String!): StarshipD7Wrapper,
-    starships_d7(page: page, sort: sort): StarshipD7Wrapper,
-    starwars_starship(id: String!): StarWarsWrapper,
-    starwars_starships(page: page, sort: sort): StarWarsWrapper,
+    battle_star(page: page, sort: sort): BattleStarWrapper,
+    star_trek(page: page, sort: sort): StarTrekWrapper,
+    star_wars(page: page, sort: sort): StarWarsWrapper,
   }
 `;
 
@@ -51,11 +47,10 @@ module.exports = makeExecutableSchema({
     directionEnum,
     sortInput,
     starshipSchema,
-    starshipWrapperSchema,
-    starshipD7Schema,
-    starshipD7WrapperSchema,
-    starwarsSchema,
-    starwarsWrapperSchema,
+    battleStarWrapperSchema,
+    starTrekWrapperSchema,
+    starWarsSchema,
+    starWarsWrapperSchema,
     pageInput,
     paginationType
   ],

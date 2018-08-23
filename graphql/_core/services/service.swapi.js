@@ -25,10 +25,6 @@ class Service {
 
     // Add args
     if (!_.isEmpty(args)) {
-      // ID
-      if (args.id) {
-        queryParts.push('filter[item-id][condition][path]=uuid&filter[item-id][condition][value]=' + args.id);
-      }
 
       // Pagination
       if (args.page) {

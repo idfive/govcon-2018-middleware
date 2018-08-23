@@ -3,7 +3,7 @@ const _ = require('lodash');
 const Node = require('../_core/types/Node');
 const TaxonomyTerm = require('../taxonomy_term/taxonomy_term.class');
 
-class Starship extends Node {
+class StarTrek extends Node {
 
   constructor(data, included) {
     super(data, included);
@@ -20,4 +20,4 @@ class Starship extends Node {
 
 }
 
-module.exports = Starship;
+module.exports = StarTrek;

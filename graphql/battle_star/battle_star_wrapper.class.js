@@ -1,8 +1,8 @@
 const _ = require('lodash');
-const Starship = require('./starship.class');
+const Starship = require('./battle_star.class');
 const Pagination = require('../_core/class/pagination.class');
 
-class StarshipWrapper {
+class BattleStarWrapper {
 
   constructor(data, included) {
     this.pagination = new Pagination(data.meta, data.links);
@@ -10,4 +10,4 @@ class StarshipWrapper {
   }
 }
 
-module.exports = StarshipWrapper;
+module.exports = BattleStarWrapper;
