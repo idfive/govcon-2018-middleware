@@ -14,8 +14,7 @@ const truncate = require('truncate-html');
 
     // title and body not required on nodes, but included here since they appear in most cases
     this.title = attributes.title;
-    this.body = attributes.body ? attributes.body.value : null;
-    this.summary = !this.body ? null : !attributes.body.summary ? truncate(this.body, 20, { byWords: true, stripTags: true }) : attributes.body.summary;
+    this.description = attributes.body ? attributes.body.value : null;
 
     this._relationships = {};
     this.included = included;

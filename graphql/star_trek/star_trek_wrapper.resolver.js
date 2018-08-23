@@ -1,9 +1,9 @@
 const _ = require('lodash');
 const StarTrekWrapper = require('../star_trek/star_trek_wrapper.class');
-const StarTrekWrapperService = require('../star_trek/star_trek_wrapper.service');
-const starTrekWrapperService = new StarTrekWrapperService();
+const StarTrekService = require('../_core/services/service.d7');
+const starTrekService = new StarTrekService();
 
 module.exports = {
-  star_trek: (args) => starTrekWrapperService.get(args)
+  star_trek: (args) => starTrekService.get(args)
     .then(response => new StarTrekWrapper(response.data, response.data.included || {}))
 };

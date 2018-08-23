@@ -1,11 +1,11 @@
 const _ = require('lodash');
-const Starship = require('./star_trek.class');
+const Starship = require('./all_stars.class');
 
-class StarTrekWrapper {
+class AllStarsWrapper {
 
   constructor(data, included) {
     this.data = _.map(data.data, data => new Starship(data, included));
   }
 }
 
-module.exports = StarTrekWrapper;
+module.exports = AllStarsWrapper;

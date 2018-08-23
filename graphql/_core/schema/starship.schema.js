@@ -2,7 +2,7 @@ const Starship = `
   type Starship implements Node {
     id: ID
     title: String
-    body: String
+    description: String
     starship_class: [TaxonomyTerm]
   }
 `;

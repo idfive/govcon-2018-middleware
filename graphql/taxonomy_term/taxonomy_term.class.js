@@ -1,6 +1,7 @@
 class TaxonomyTerm {
 
   constructor(data) {
+    
     this.name = data.attributes.name;
     this.tid = data.attributes.tid;
 

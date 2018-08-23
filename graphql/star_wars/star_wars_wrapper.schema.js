@@ -1,7 +1,7 @@
 
 const StarWarsWrapper = `
   type StarWarsWrapper {
-    data: [Star_Wars]
+    data: [Starship]
   }
 `;
 

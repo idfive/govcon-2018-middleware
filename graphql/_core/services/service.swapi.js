@@ -5,6 +5,13 @@ class Service {
 
   constructor() {
     this.baseUrl = 'https://swapi.co/api';
+
+    this.endpoint = '/starships';
+
+    this.sort = {
+      'title': 'title'
+    };
+
   }
 
   /**
@@ -13,7 +20,7 @@ class Service {
    */
   get(args) {
     var queryStr = this.buildQuery(args);
-    return axios.get(this.baseUrl + this.endpoint + queryStr);
+    return axios.get(this.baseUrl + this.endpoint);
   }
 
   /**

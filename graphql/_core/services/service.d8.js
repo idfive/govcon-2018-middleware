@@ -5,6 +5,29 @@ class Service {
 
   constructor() {
     this.baseUrl = 'http://dev-govcon-2018-starships-d8.pantheonsite.io/jsonapi';
+    
+    this.endpoint = '/node/starship';
+
+    // Map relationships
+    this.relationships = {
+      'field_starship_class': {
+        'reference': 'taxonomy_term--starship_class',
+        'fields': [
+          'tid',
+          'name'
+        ]
+      }
+    };
+
+    // Map filter name to Drupal field
+    this.filters = {
+      'class': 'field_starship_class'
+    };
+
+    this.sort = {
+      'title': 'title'
+    };
+
   }
 
   /**

@@ -1,9 +1,9 @@
 const _ = require('lodash');
 const StarWarsWrapper = require('../star_wars/star_wars_wrapper.class');
-const StarWarsWrapperService = require('../star_wars/star_wars_wrapper.service');
-const starwarsWrapperService = new StarWarsWrapperService();
+const StarWarsService = require('../_core/services/service.swapi');
+const starWarsService = new StarWarsService();
 
 module.exports = {
-  star_wars: (args) => starwarsWrapperService.get(args)
+  star_wars: (args) => starWarsService.get(args)
     .then(response => new StarWarsWrapper(response.data))
 };

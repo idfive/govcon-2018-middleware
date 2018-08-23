@@ -18,16 +18,18 @@ const paginationType = require('../../_core/schema/type.pagination');
 const taxonomyTermSchema = require('../../taxonomy_term/taxonomy_term.schema');
 const taxonomyTermWrapperSchema = require('../../taxonomy_term/taxonomy_term_wrapper.schema');
 const starshipSchema = require('./starship.schema');
+const starshipSimpleSchema = require('./starship_simple.schema');
 const battleStarWrapperSchema = require('../../battle_star/battle_star_wrapper.schema');
 const starTrekWrapperSchema = require('../../star_trek/star_trek_wrapper.schema');
-const starWarsSchema = require('../../star_wars/star_wars.schema');
 const starWarsWrapperSchema = require('../../star_wars/star_wars_wrapper.schema');
+const allStarsWrapperSchema = require('../../all_stars/all_stars_wrapper.schema');
 
 const RootQuery = `
   type RootQuery {
     battle_star(page: page, sort: sort): BattleStarWrapper,
     star_trek(page: page, sort: sort): StarTrekWrapper,
     star_wars(page: page, sort: sort): StarWarsWrapper,
+    all_stars(page: page, sort: sort): AllStarsWrapper,
   }
 `;
 
@@ -47,10 +49,11 @@ module.exports = makeExecutableSchema({
     directionEnum,
     sortInput,
     starshipSchema,
+    starshipSimpleSchema,
     battleStarWrapperSchema,
     starTrekWrapperSchema,
-    starWarsSchema,
     starWarsWrapperSchema,
+    allStarsWrapperSchema,
     pageInput,
     paginationType
   ],
