@@ -3,6 +3,12 @@ STARSHIPS HUB API
 
 This is an example middleware client built for presentation at drupal GovCon 2018 This example API is designed to act as middleware between two drupal clients (d7 and d8), and the Star Wars API. It utilizes GraphQl language for the client queries, then transforms and passes that request along to the appropriate API endpoint, then does some minor parsing to the response, before returning to the client. This can be extended in the future to query any location with an API, so that the end result is one endpoint (this one) that can fetch data from several different API sources.
 
+ASSCOCIATED APIS
+-------------------
+D7: Dev-govcon-2018-starships-d7.pantheonsite.io (http://dev-govcon-2018-starships-d7.pantheonsite.io/api/starships)
+D8: dev-govcon-2018-starships-d8.pantheonsite.io (dev-govcon-2018-starships-d8.pantheonsite.io/jsonapi/node/starship)
+Seperate: Star Wars API  swapi.co/starships
+
 AUTH
 -------------------
 This middleware uses basic auth, for an example, provided by Passport.js. Specifically:  https://github.com/jaredhanson/passport-http. This is by no means designed to be "super duper" secure, but rather throw in an obfuscation layer, being that this is a public API anyhow. List of user/pass combinations provided in server.js (var users) which can be edited/added to. Currently, use:
