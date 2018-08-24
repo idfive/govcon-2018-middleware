@@ -28,8 +28,8 @@ const RootQuery = `
   type RootQuery {
     battle_star(page: page, sort: sort): BattleStarWrapper,
     star_trek(page: page, sort: sort): StarTrekWrapper,
-    star_wars(page: page, sort: sort): StarWarsWrapper,
-    all_stars(page: page, sort: sort): AllStarsWrapper,
+    star_wars: StarWarsWrapper,
+    all_stars: AllStarsWrapper,
   }
 `;
 
